@@ -17,6 +17,12 @@ Getting Started
 ```sh
 kubectl label namespace default istio-injection=enabled --overwrite
 ```
+> * clone
+```sh
+git clone https://github.com/wangyy2113/spring-istio-route-demo.git
+cd spring-istio-route-demo
+```
+
 
 1. 启动minikube
 ```sh

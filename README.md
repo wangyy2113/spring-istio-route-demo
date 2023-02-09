@@ -52,7 +52,7 @@ curl '127.0.0.1:80/greet/http?featureTag=v4'
 - 即curl '127.0.0.1:80/greet/http?featureTag=v2' 会得到Response "Client receive Server msg: Http Greeting from server-v2"
 - 其他请求会得到Response "Client receive Server msg: Http Greeting from server-v1"
 
-6.关闭服务
+6. 关闭服务
 ```sh
 sh stopall.sh
 ```

@@ -11,13 +11,13 @@ docker & minikube & istio & jdk1.8 & maven
 Getting Started
 ---------------
 0. 环境准备
-> * minikube安装参考 https://minikube.sigs.k8s.io/docs/start/
-> * istio安装参考https://istio.io/latest/zh/docs/setup/install/istioctl/
-> * 开启istio sidecar自动注入(将k8s default命名空间标记为 istio-injection=enabled)
+- minikube安装参考 https://minikube.sigs.k8s.io/docs/start/
+- istio安装参考https://istio.io/latest/zh/docs/setup/install/istioctl/
+- 开启istio sidecar自动注入(将k8s default命名空间标记为 istio-injection=enabled)
 ```sh
 kubectl label namespace default istio-injection=enabled --overwrite
 ```
-> * clone
+- clone
 ```sh
 git clone https://github.com/wangyy2113/spring-istio-route-demo.git
 cd spring-istio-route-demo

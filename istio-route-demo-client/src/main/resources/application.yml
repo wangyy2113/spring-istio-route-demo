@@ -1,0 +1,3 @@
+spring.application.name: istio-route-demo-client
+
+server.port: 19090

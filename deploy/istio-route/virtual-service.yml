@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: istio-route-demo-server
+spec:
+  hosts:
+    - istio-route-demo-server
+  http:
+    - match:
+        - headers:
+            featureTag:
+              exact: v2
+      route:
+        - destination:
+            host: istio-route-demo-server
+            subset: v2
+    - route:
+        - destination:
+            host: istio-route-demo-server
+            subset: v1

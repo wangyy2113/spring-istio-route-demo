@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: istio-route-demo-client
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 19090
+      targetPort: 19090
+  selector:
+    app: istio-route-demo-client
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: istio-route-demo-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: istio-route-demo-client
+  template:
+    metadata:
+      labels:
+        app: istio-route-demo-client
+    spec:
+      containers:
+        - name: istio-route-demo-client
+          image: docker.io/library/istio-route-demo-client:latest
+          imagePullPolicy: IfNotPresent
+          tty: true
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 19090
